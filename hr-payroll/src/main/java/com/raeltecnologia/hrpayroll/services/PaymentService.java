@@ -1,7 +1,6 @@
 package com.raeltecnologia.hrpayroll.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.raeltecnologia.hrpayroll.entities.Payment;
