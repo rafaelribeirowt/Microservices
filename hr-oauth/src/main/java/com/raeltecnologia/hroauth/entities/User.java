@@ -1,4 +1,5 @@
 package com.raeltecnologia.hroauth.entities;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,9 +11,9 @@ public class User implements Serializable {
 	private String name;
 	private String email;
 	private String password;
-	
+
 	private Set<Role> roles = new HashSet<>();
-	
+
 	public User() {
 	}
 
@@ -55,7 +56,7 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public Set<Role> getRoles() {
 		return roles;
 	}
@@ -68,6 +69,20 @@ public class User implements Serializable {
 		return result;
 	}
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
 }
-
